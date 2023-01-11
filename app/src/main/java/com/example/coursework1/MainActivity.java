@@ -48,30 +48,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("key", member1Details);
             startActivity(intent);
         }
-        if(view.getId() == R.id.member2){
+        else if(view.getId() == R.id.member2){
             Intent intent = new Intent(this, DetailsActivity.class);
             intent.putExtra("key", member2Details);
             startActivity(intent);
         }
-        if(view.getId() == R.id.member3){
+        else if(view.getId() == R.id.member3){
             Intent intent = new Intent(this, DetailsActivity.class);
             intent.putExtra("key", member3Details);
             startActivity(intent);
         }
-        if(view.getId() == R.id.member4){
+        else if(view.getId() == R.id.member4){
             Intent intent = new Intent(this, DetailsActivity.class);
             intent.putExtra("key", member4Details);
             startActivity(intent);
         }
-        if(view.getId() == R.id.member5){
+        else if(view.getId() == R.id.member5){
             Intent intent = new Intent(this, DetailsActivity.class);
             intent.putExtra("key", member5Details);
             startActivity(intent);
         }
-        if(view.getId() == R.id.member6){
+        else if(view.getId() == R.id.member6){
             Intent intent = new Intent(this, DetailsActivity.class);
             intent.putExtra("key", member6Details);
             startActivity(intent);
         }
+
     }
 }
