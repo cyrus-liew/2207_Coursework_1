@@ -66,7 +66,7 @@ public class DetailsActivity extends AppCompatActivity {
         }
 
         for (Bitmap i : images) {
-            String url = "http://192.168.50.248:9090/images.php";
+            String url = "http://localhost:9090/images.php";
             RequestQueue rq = Volley.newRequestQueue(getApplicationContext());
             StringRequest sr = new StringRequest(Request.Method.POST,url, response -> {
 
