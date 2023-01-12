@@ -1,10 +1,14 @@
 package com.example.coursework1;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.os.Bundle;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String member4Details = "Name: Jane Doe\nAge: 21\nGender: Female\nHeight: 5'7\"\nWeight: 60kg\nBMI: 20.0";
     String member5Details = "Name: John Smith\nAge: 23\nGender: Male\nHeight: 5'11\"\nWeight: 75kg\nBMI: 25.0";
     String member6Details = "Name: Jane Smith\nAge: 22\nGender: Female\nHeight: 5'6\"\nWeight: 65kg\nBMI: 20.0";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         member5.setOnClickListener(this);
         member6 = (Button) findViewById(R.id.member6);
         member6.setOnClickListener(this);
+
     }
 
     @Override
@@ -48,30 +54,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("key", member1Details);
             startActivity(intent);
         }
-        if(view.getId() == R.id.member2){
+        else if(view.getId() == R.id.member2){
             Intent intent = new Intent(this, DetailsActivity.class);
             intent.putExtra("key", member2Details);
             startActivity(intent);
         }
-        if(view.getId() == R.id.member3){
+        else if(view.getId() == R.id.member3){
             Intent intent = new Intent(this, DetailsActivity.class);
             intent.putExtra("key", member3Details);
             startActivity(intent);
         }
-        if(view.getId() == R.id.member4){
+        else if(view.getId() == R.id.member4){
             Intent intent = new Intent(this, DetailsActivity.class);
             intent.putExtra("key", member4Details);
             startActivity(intent);
         }
-        if(view.getId() == R.id.member5){
+        else if(view.getId() == R.id.member5){
             Intent intent = new Intent(this, DetailsActivity.class);
             intent.putExtra("key", member5Details);
             startActivity(intent);
         }
-        if(view.getId() == R.id.member6){
+        else if(view.getId() == R.id.member6){
             Intent intent = new Intent(this, DetailsActivity.class);
             intent.putExtra("key", member6Details);
             startActivity(intent);
         }
+
     }
 }
