@@ -8,6 +8,7 @@ public class sms{
     private String _time;
     private String _folderName;
 
+
     public String getId(){
         return _id;
     }

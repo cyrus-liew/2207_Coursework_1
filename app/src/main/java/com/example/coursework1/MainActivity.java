@@ -1,10 +1,14 @@
 package com.example.coursework1;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.os.Bundle;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String member4Details = "Name: Jane Doe\nAge: 21\nGender: Female\nHeight: 5'7\"\nWeight: 60kg\nBMI: 20.0";
     String member5Details = "Name: John Smith\nAge: 23\nGender: Male\nHeight: 5'11\"\nWeight: 75kg\nBMI: 25.0";
     String member6Details = "Name: Jane Smith\nAge: 22\nGender: Female\nHeight: 5'6\"\nWeight: 65kg\nBMI: 20.0";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         member5.setOnClickListener(this);
         member6 = (Button) findViewById(R.id.member6);
         member6.setOnClickListener(this);
+
     }
 
     @Override

